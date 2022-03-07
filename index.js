@@ -4,8 +4,11 @@ const  PORT = 5000
 
 const app =express()
 
-app.get('/', (req , res) => {
-    res.status(200).json("Сервер работает!!!")
+app.use(express.json())
+
+app.post('/', (req , res) => {
+    console.log(req.body);
+    res.status(200).json("Сервер работает УРА1 !!!");
 })
 
-app.listen(PORT, () => console.log("Server started on PORT" + PORT ))
+app.listen(PORT, () => console.log("Server started on PORT " + PORT ))
